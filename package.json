@@ -1,16 +1,18 @@
 {
-  "name": "test",
+  "name": "sequelize-aiven-demo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bootstrap": "node load-data.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "mysql2": "^2.3.3",
     "sequelize": "^6.12.0-alpha.1"
   }
