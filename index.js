@@ -1,5 +1,5 @@
 require('dotenv').config()
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize, DataTypes, Op } = require('sequelize');
 
 // Create the connection by passing a connection URI
 const sequelize = new Sequelize(process.env.AIVEN_MYSQL_URI)
@@ -28,6 +28,7 @@ async function createBooksTable() {
         console.log("Database has rows already!")
         // Run examples
         getAllBooks();
+        getAllRatch();
     } else {
         console.log("Adding some rows . . .");
         res.bulkCreate([
@@ -37,6 +38,7 @@ async function createBooksTable() {
         ]);
         // Run examples
         getAllBooks();
+        getAllRatch();
     }  
 }
 createBooksTable();
@@ -45,6 +47,18 @@ createBooksTable();
 async function getAllBooks() {
     const books = await Book.findAll();
     console.log("All books:", JSON.stringify(books, null, 2));
+}
+
+// List all books with an author name including the string 'ratch'
+async function getAllRatch() {
+    const books = await Book.findAll({
+        where: {
+            authorName: {
+                [Op.like]: '%ratch%'
+            }
+        }
+    });
+    console.log("All books with an author name including 'ratch':", JSON.stringify(books, null, 2));
 }
 
 
