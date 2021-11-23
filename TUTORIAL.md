@@ -51,7 +51,7 @@ For these examples, we'll create a hobbyist-tier MySQL database on DigitalOcean.
     * Cloud provider: Digital Ocean
     * Cloud region: choose one near you!
     * Service plan: Hobbyist
-4. Enter a name for this service.
+4. Enter a name for this service.  
     Your final configuration should look like this:
     ![Screenshot of the Aiven console, showing a summary of the service configuration](aiven-service-config.jpg "Aiven service configuration summary")
 5. Select **+ Create Service**. Aiven will set up your database. This may take a few minutes.
