@@ -163,3 +163,7 @@ await Book.findAll({
 With the SQL query: `SELECT * FROM Books WHERE authorName LIKE '%ratch%'`.
 
 Neither is especially complex, both are readable. But the Sequelize version follows a pattern that is already familiar to JavaScript developers, and may cause a little less friction when coding.
+
+## Wrap up
+
+Hopefully, the brief discussion of the pros and cons of ORMs, and the examples from Sequelize, will help you decide whether using an ORM is right for your project. ORMs are available across many programming languages, and can support a huge range of databases. If you build something cool with an ORM and an Aiven database, we'd love to hear about it!
